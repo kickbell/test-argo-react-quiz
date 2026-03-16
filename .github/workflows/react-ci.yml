@@ -31,7 +31,10 @@ jobs:
 
     - name: Build Docker image
       # Dockerfile과 빌드 결과물(build/)이 test-front 폴더 안에 있으므로 경로 지정
-      run: docker build -t ${{ secrets.DOCKER_USERNAME }}/front_app:1.0 ./test-front
+      # run: docker build -t ${{ secrets.DOCKER_USERNAME }}/front_app:1.0 ./test-front
+      run: docker build -t ${{ secrets.DOCKER_USERNAME }}/front_app:1.0 -f ./test-front/dockerfile ./test-front
+
+    
 
     - name: Push Docker image
       run: docker push ${{ secrets.DOCKER_USERNAME }}/front_app:1.0
