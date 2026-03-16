@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     const dataFunc = async () => {
       try {
-        // 옵션을 최소화하여 기본 통신 확인
+        // 옵션을 최소화하여 기본 통신 확인.
         const res = await fetch(path);
         
         if (res.ok) {
